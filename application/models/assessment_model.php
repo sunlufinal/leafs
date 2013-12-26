@@ -1,5 +1,5 @@
 <?php
-class Card_favorite_model extends CI_Model {
+class Assessment_model extends CI_Model {
 
 	public function __construct()
 	{
@@ -9,12 +9,12 @@ class Card_favorite_model extends CI_Model {
 
 	/**
 	  *@description add record
-	  *@param $data
+	  *@param $card_id, $user_id
 	  *@return none
 	*/
-	public function add($card_id,$user_id)
+	public function add($score,$card_id,$user_id)
 	{
-		$this->db->insert('card_favorite',array('card_id'=>$card_id,'user_id'=>$user_id));
+		$this->db->insert('assessment', array('score'=>$score,'card_id'=>$card_id,'user_id'=>$user_id));
 	}
 
 	/**
@@ -24,7 +24,7 @@ class Card_favorite_model extends CI_Model {
 	*/
 	public function does_exist_with_card_id_and_user_id($card_id,$user_id)
 	{
-		$query=$this->db->get_where('card_favorite',array('card_id'=>$card_id,'user_id'=>$user_id));
+		$query=$this->db->get_where('assessment',array('card_id'=>$card_id,'user_id'=>$user_id));
 		if($query->num_rows()>0)
 		{
 			return true;
@@ -33,4 +33,5 @@ class Card_favorite_model extends CI_Model {
 			return false;
 		}
 	}
+
 }

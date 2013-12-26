@@ -20,7 +20,8 @@ class Card extends CI_Controller {
 			return 2;
 
 		$data = array(
-			'id' => $this->input->post('id')
+			'card_id' => $this->input->post('id'),
+			'user_id' => $this->session->userdata('user_id')
 		);
 
 		$keys=array_keys($data);
@@ -34,7 +35,13 @@ class Card extends CI_Controller {
 			return 1;	//no valid data in POST
 		}
 
-		return $this->card_model->get_with_id($data['id']);
+		$result=$this->card_model->get_with_id($data['card_id']);
+
+		$this->load->model('card_browse_model');
+		if(count($result)>0)
+			$this->card_browse_model->add($data['card_id'],$data['user_id']);
+
+		return $result;
 	}
 
 	/**

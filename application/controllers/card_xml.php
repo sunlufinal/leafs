@@ -85,13 +85,13 @@ class Card_xml extends Card {
 				$xmlDoc->createElement('assessment',$result['assessment'])
 				);
 			$content->appendChild(
-				$xmlDoc->createElement('num_of_read',$result['num_of_read'])
+				$xmlDoc->createElement('num_of_browse',$result['num_of_browse'])
+				);
+			$content->appendChild(
+				$xmlDoc->createElement('accumulated_time',$result['accumulated_time'])
 				);
 			$content->appendChild(
 				$xmlDoc->createElement('num_of_like',$result['num_of_like'])
-				);
-			$content->appendChild(
-				$xmlDoc->createElement('num_of_favorite',$result['num_of_favorite'])
 				);
 			$content->appendChild(
 				$xmlDoc->createElement('num_of_share',$result['num_of_share'])
@@ -179,13 +179,13 @@ class Card_xml extends Card {
 				$xmlDoc->createElement('assessment',$result['assessment'])
 				);
 			$content->appendChild(
-				$xmlDoc->createElement('num_of_read',$result['num_of_read'])
+				$xmlDoc->createElement('num_of_browse',$result['num_of_browse'])
+				);
+			$content->appendChild(
+				$xmlDoc->createElement('accumulated_time',$result['accumulated_time'])
 				);
 			$content->appendChild(
 				$xmlDoc->createElement('num_of_like',$result['num_of_like'])
-				);
-			$content->appendChild(
-				$xmlDoc->createElement('num_of_favorite',$result['num_of_favorite'])
 				);
 			$content->appendChild(
 				$xmlDoc->createElement('num_of_share',$result['num_of_share'])
